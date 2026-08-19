@@ -1,15 +1,11 @@
 <?php
 
-use App\Http\Controllers\FirstController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::get('/test', function () {
-    return view('test');
-})->name('test');
 
-
-Route::get('/first', [FirstController::class, 'index'])->name('first');
+Route::get('/', [HomeController::class, 'index'])->name('home');
