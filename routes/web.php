@@ -11,6 +11,7 @@ use App\Http\Controllers\ProvinceController;
 Route::middleware('auth')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     require __DIR__ . '/users.php';
+    Route::resource('provinces', ProvinceController::class);
     Route::resource('communes', CommuneController::class);
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
