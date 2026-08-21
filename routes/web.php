@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LocaliteController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CommuneController;
 use App\Http\Controllers\HomeController;
@@ -13,7 +14,7 @@ Route::middleware('auth')->group(function () {
     require __DIR__ . '/users.php';
     Route::resource('provinces', ProvinceController::class);
     Route::resource('communes', CommuneController::class);
-
+    Route::resource('localites', LocaliteController::class); // englobe tout (index,edit,show,...)
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
