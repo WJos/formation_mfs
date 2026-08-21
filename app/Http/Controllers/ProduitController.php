@@ -30,19 +30,28 @@ class ProduitController extends Controller
      * Store a newly created resource in storage.
      */
     // 
-    public function store(StoreproduitRequest $request)
-    {
+//     public function store(StoreproduitRequest $request)
+//     {
 
-    $data = $request->all();
-    Produit::create($data);
+//     $data = $request->all();
+//     Produit::create($data);
     
-    try {
-           Produit::create($data);
-           return redirect()->route('produits.index')->with('success', 'Le produit est enregistré avec succès.');
-       } catch (\Throwable $th) {
-           return redirect()->route('produits.index')->with('error', 'Erreur d\'enregistrement du produit.');
-       }
+//     try {
+//            Produit::create($data);
+//            return redirect()->route('produits.index')->with('success', 'Le produit est enregistré avec succès.');
+//        } catch (\Throwable $th) {
+//            return redirect()->route('produits.index')->with('error', 'Erreur d\'enregistrement du produit.');
+//        }
 
+// }
+public function store(StoreProduitRequest $request)
+{
+    try {
+        Produit::create($request->validated());
+        return redirect()->route('produits.index')->with('success', 'Le produit est enregistré avec succès.');
+    } catch (\Throwable $th) {
+        return redirect()->route('produits.index')->with('error', 'Erreur d\'enregistrement du produit.');
+    }
 }
 
     /**
