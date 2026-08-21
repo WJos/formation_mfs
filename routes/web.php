@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\CommuneController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -9,3 +9,4 @@ Route::get('/welcome', function () {
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::resource('communes', CommuneController::class);
