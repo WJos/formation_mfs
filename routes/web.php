@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LocaliteController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RegionController;
 use App\Http\Controllers\CommuneController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\ProvinceController;
 Route::middleware('auth')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     require __DIR__ . '/users.php';
+    Route::resource('regions', RegionController::class);
     Route::resource('provinces', ProvinceController::class);
     Route::resource('communes', CommuneController::class);
     Route::resource('localites', LocaliteController::class); // englobe tout (index,edit,show,...)
