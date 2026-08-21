@@ -262,7 +262,7 @@
             </ul>
           </li> --}}
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="" class="nav-link">
               <i class="nav-icon fas fa-table"></i>
               <p>
                 Paramètres
@@ -270,10 +270,16 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
+            <li class="nav-item">
                 <a href="pages/tables/simple.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i c  lass="far fa-circle nav-icon"></i>
                   <p>Regions</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('pays.index')}}" class="nav-link">
+                  <i c  lass="far fa-circle nav-icon"></i>
+                  <p>Pays</p>
                 </a>
               </li>
               {{-- <li class="nav-item">
