@@ -77,7 +77,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a href="{{ route('pays.index') }}" class="nav-link">
-                                        <i c lass="far fa-circle nav-icon"></i>
+                                        <i class="far fa-circle nav-icon"></i>
                                         <p>Pays</p>
                                     </a>
                                 </li>
@@ -103,6 +103,12 @@
                                     <a href="{{ route('localites.index') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Localités</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('produits.index') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Produits</p>
                                     </a>
                                 </li>
                             </ul>
