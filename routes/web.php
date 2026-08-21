@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LocaliteController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PaysController;
 use App\Http\Controllers\RegionController;
 use App\Http\Controllers\CommuneController;
 use App\Http\Controllers\HomeController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\ProvinceController;
 Route::middleware('auth')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     require __DIR__ . '/users.php';
+    Route::resource('pays', PaysController::class);
     Route::resource('regions', RegionController::class);
     Route::resource('provinces', ProvinceController::class);
     Route::resource('communes', CommuneController::class);

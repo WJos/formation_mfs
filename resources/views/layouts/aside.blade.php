@@ -76,6 +76,12 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
+                                    <a href="{{ route('pays.index') }}" class="nav-link">
+                                        <i c lass="far fa-circle nav-icon"></i>
+                                        <p>Pays</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="{{ route('regions.index') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Régions</p>
