@@ -36,7 +36,7 @@
                              <!-- form start -->
                              <form method="post" action=" {{ route('regions.store') }} ">
                                 @csrf 
-                                @include('admin.region._form')
+                                @include('admin.Region._form')
                              </form>
                          </div>
                      </div>

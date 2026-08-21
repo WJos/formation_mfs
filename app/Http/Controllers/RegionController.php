@@ -14,7 +14,7 @@ class RegionController extends Controller
     public function index()
     {
         $regions= Region::All();    
-        return view('admin.region.index',compact('regions'));
+        return view('admin.Region.index',compact('regions'));
     }
 
     /**
@@ -22,7 +22,7 @@ class RegionController extends Controller
      */
     public function create()
     {
-        return view('admin.region.create');
+        return view('admin.Region.create');
     }
 
     /**
@@ -56,7 +56,7 @@ class RegionController extends Controller
     public function edit(Region $region)
     {
         $region = Region::findOrFail($region->id);
-        return view('admin.region.edit', compact('region'));
+        return view('admin.Region.edit', compact('region'));
         
     }
 

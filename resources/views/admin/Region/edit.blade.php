@@ -37,7 +37,7 @@
                              <form  method="post" action=" {{ route('regions.update', $region->id)}}  " enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
-                                 @include('admin.region._form')
+                                 @include('admin.Region._form')
                              </form>
                          </div>
                      </div>
