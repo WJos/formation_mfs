@@ -77,6 +77,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{ route('provinces.index') }}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Provinces</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ route('communes.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Communes</p>
