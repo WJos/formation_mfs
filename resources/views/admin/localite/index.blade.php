@@ -79,15 +79,15 @@
                                     <td>{{ $localite->nom }}</td>
                                     <td>{{ $localite->secteur }}</td>
                                     <td>
-                                        <a class="btn btn-primary" href="{{ route('localites.edit', $localite->id) }}"><i
-                                                class="fa fa-edit" title="Editer"></i></a>
-                                        <form method="post" action="{{ route('localites.destroy', $localite) }}">
+                                        <a href="{{ route('localites.edit', $localite->id) }}" class="btn btn-primary "><i
+                                                class="fas fa-edit" title="Modifier"></i></a>
+                                        <form action="{{ route('localites.destroy', $localite->id) }}" method="POST"
+                                            style="display: inline-block;">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"
+                                            <button type="submit" class="btn btn-danger"><i class="fas fa-trash"
                                                     title="Supprimer"></i></button>
                                         </form>
-
                                     </td>
                                 </tr>
                             @empty

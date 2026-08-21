@@ -12,10 +12,16 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
 
-        $users = User::all();
+        $perPage = $request->input('per_page', 2);
+
+        $query = User::query();
+        $users = $query
+            ->orderBy('created_at', 'desc')
+            ->paginate($perPage)
+            ->withQueryString();
 
         return view('admin.user.index', compact('users'));
     }
