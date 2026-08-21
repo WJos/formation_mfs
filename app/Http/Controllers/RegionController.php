@@ -11,9 +11,18 @@ class RegionController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $regions= Region::All();    
+       // $regions= Region::All();  
+       
+       $perPage = $request->input('per_page', 3);
+
+        $query = Region::query();
+        $regions = $query
+            ->orderBy('created_at', 'desc')
+            ->paginate($perPage)
+            ->withQueryString();
+
         return view('admin.Region.index',compact('regions'));
     }
 
