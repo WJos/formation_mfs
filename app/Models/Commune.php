@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class produit extends Model
+
+class Commune extends Model
 {
-    /** @use HasFactory<\Database\Factories\ProduitFactory> */
+    /** @use HasFactory<\Database\Factories\CommuneFactory> */
     use HasFactory;
     protected $fillable = [
         'nom',
-        'prix',
-        'quantite',
+        'population',
     ];
 }
