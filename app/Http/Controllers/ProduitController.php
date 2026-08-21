@@ -12,9 +12,16 @@ class ProduitController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $produits = Produit::all();
+        // $produits = Produit::all();
+        $perPage = $request->input('per_page', 2);
+
+        $query = Produit::query();
+        $produits = $query
+            ->orderBy('created_at', 'desc')
+            ->paginate($perPage)
+            ->withQueryString();
         return view('admin.produit.index', compact('produits'));
     }
 
