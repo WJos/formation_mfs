@@ -127,6 +127,8 @@
                                         </tr>
                                     </tfoot>
                                 </table>
+
+                                {{ $regions->links('pagination::bootstrap-5') }}
                             </div>
 
                         </div>
