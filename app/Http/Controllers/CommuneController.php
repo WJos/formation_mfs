@@ -34,7 +34,7 @@ class CommuneController extends Controller
     {
        // dd($request);
        $data = $request->all();
-       Commune::create($data );
+    //    Commune::create($data );
       try {
            Commune::create($data);
            return redirect()->route('communes.index')->with('success', 'La commune est enregistrée avec succès.');

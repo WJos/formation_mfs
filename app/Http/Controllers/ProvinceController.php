@@ -35,7 +35,7 @@ class ProvinceController extends Controller
 
     
         $data = $request->all();
-        Province::create($data);
+        // Province::create($data);
         // return view('admin.province.index');
        try {
            Province::create($data);
