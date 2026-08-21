@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Province;
+use App\Models\produit;
 use Illuminate\Http\Request;
 use App\Models\Region;
 
