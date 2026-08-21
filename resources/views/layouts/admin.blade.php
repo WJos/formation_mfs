@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 @include('layouts.head')
+@yield('css')
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
@@ -31,6 +32,7 @@
     <!-- ./wrapper -->
     <!-- jQuery -->
     @include('layouts.js')
+    @yield('js')
 </body>
 
 </html>
