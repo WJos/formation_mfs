@@ -5,15 +5,21 @@ namespace App\Http\Controllers;
 use App\Models\Commune;
 use App\Http\Requests\StoreCommuneRequest;
 use App\Http\Requests\UpdateCommuneRequest;
+use Illuminate\Http\Request;
 
 class CommuneController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $communes = Commune::all();
+        $perPage = $request->input('per_page', 2);
+        $query = Commune::query();
+        $communes = $query
+            ->orderBy('created_at', 'desc')
+            ->paginate($perPage)
+            ->withQueryString();
 
         return view('admin.commune.index', compact('communes'));
     }
