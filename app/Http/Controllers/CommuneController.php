@@ -6,6 +6,7 @@ use App\Models\Commune;
 use App\Http\Requests\StoreCommuneRequest;
 use App\Http\Requests\UpdateCommuneRequest;
 
+
 class CommuneController extends Controller
 {
     /**
@@ -32,16 +33,15 @@ class CommuneController extends Controller
      */
     public function store(StoreCommuneRequest $request)
     {
-       // dd($request);
-       $data = $request->all();
-       Commune::create($data );
-      try {
-           Commune::create($data);
-           return redirect()->route('communes.index')->with('success', 'La commune est enregistrée avec succès.');
-       } catch (\Throwable $th) {
-           return redirect()->route('communes.index')->with('error', 'Erreur d\'enregistrement de la commune.');
-       }
-
+        // dd($request);
+        $data = $request->all();
+        //Commune::create($data );
+        try {
+            Commune::create($data);
+            return redirect()->route('communes.index')->with('success', 'La commune est enregistrée avec succès.');
+        } catch (\Throwable $th) {
+            return redirect()->route('communes.index')->with('error', 'Erreur d\'enregistrement de la commune.');
+        }
     }
 
     /**
@@ -57,10 +57,9 @@ class CommuneController extends Controller
      */
     public function edit(Commune $commune)
     {
-       
+
         $commune = Commune::findOrFail($commune->id);
         return view('admin.commune.edit', compact('commune'));
-
     }
 
     /**
@@ -68,9 +67,9 @@ class CommuneController extends Controller
      */
     public function update(UpdateCommuneRequest $request, Commune $commune)
     {
-      $commune = Commune::findOrFail($commune->id);
-      $commune->update($request->all());
-      return redirect()->route('communes.index');
+        $commune = Commune::findOrFail($commune->id);
+        $commune->update($request->all());
+        return redirect()->route('communes.index');
     }
 
     /**
